@@ -19,7 +19,27 @@ It has the following screens:
   <img alt="Statement Dark" height="450px" src="https://github.com/RaviRawal13/statement_android/blob/main/screenshots/statement_dark.gif?raw=true" />
 </p>
 
+<p float="left">
+  <img alt="Statement Light Splash" height="350px" src="https://github.com/RaviRawal13/statement_android/blob/main/screenshots/splash.png?raw=true" />
+  <img alt="Statement Light Home" height="350px" src="https://github.com/RaviRawal13/statement_android/blob/main/screenshots/home.png?raw=true" />
+  <img alt="Statement Light Sources" height="350px" src="https://github.com/RaviRawal13/statement_android/blob/main/screenshots/sources.png?raw=true" />
+  <img alt="Statement Light Top Headlines" height="350px" src="https://github.com/RaviRawal13/statement_android/blob/main/screenshots/top_headlines_by_source.png?raw=true" />
+  <img alt="Statement Light Top headlines Sorting" height="350px" src="https://github.com/RaviRawal13/statement_android/blob/main/screenshots/top_headlines_sort.png?raw=true" />
+  <img alt="Statement Light Article Detail" height="350px" src="https://github.com/RaviRawal13/statement_android/blob/main/screenshots/article_detail.png?raw=true" />
+</p>
 
+
+<p float="left">
+  <img alt="Statement Dark Home" height="350px" src="https://github.com/RaviRawal13/statement_android/blob/main/screenshots/dark_home.png?raw=true" />
+  <img alt="Statement Dark Loader" height="350px" src="https://github.com/RaviRawal13/statement_android/blob/main/screenshots/dark_loader.png?raw=true" />
+  <img alt="Statement Dark Sources" height="350px" src="https://github.com/RaviRawal13/statement_android/blob/main/screenshots/dark_sources.png?raw=true" />
+  <img alt="Statement Dark Top Headlines" height="350px" src="https://github.com/RaviRawal13/statement_android/blob/main/screenshots/dark_top_headlines.png?raw=true" />
+  <img alt="Statement Dark Headlines Sorting" height="350px" src="https://github.com/RaviRawal13/statement_android/blob/main/screenshots/dark_top_headlines_sorting.png?raw=true" />
+  <img alt="Statement Dark Webview" height="350px" src="https://github.com/RaviRawal13/statement_android/blob/main/screenshots/dark_article_webview.png?raw=true" />
+  <img alt="Statement Dark Article Detail" height="350px" src="https://github.com/RaviRawal13/statement_android/blob/main/screenshots/dark_article_detail.png?raw=true" />
+  
+  
+</p>
 
 
 ## Development Setup
