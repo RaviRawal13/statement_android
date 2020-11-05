@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cv_content_large"
+    style="@style/CardViewClickable"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/border_shape">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border_shape">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_start"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/constraint_guide_begin" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_end"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/constraint_guide_end" />
+
+        <ImageView
+            android:id="@+id/iv_content_image"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="@dimen/iv_content_article_large_margin"
+            android:contentDescription="@string/content_image_description"
+            android:scaleType="fitXY"
+            app:layout_constraintDimensionRatio="16:9"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+        <TextView
+            android:id="@+id/tv_headline"
+            style="@style/TvHeadline"
+            android:layout_marginTop="@dimen/tv_headline_article_large_margin_top"
+            android:ellipsize="end"
+            android:maxLines="@integer/three"
+            android:paddingBottom="@dimen/tv_headline_article_large_padding_bottom"
+            app:layout_constraintEnd_toEndOf="@id/g_end"
+            app:layout_constraintStart_toStartOf="@id/g_start"
+            app:layout_constraintTop_toBottomOf="@+id/iv_content_image"
+            app:layout_goneMarginEnd="@dimen/tv_headline_article_large_gone_margin_end"
+            tools:text="Title" />
+
+        <TextView
+            android:id="@+id/tv_content"
+            style="@style/TvContent"
+            android:paddingBottom="@dimen/tv_content_article_large_padding_bottom"
+            android:maxLines="2"
+            android:ellipsize="end"
+            app:layout_constraintEnd_toEndOf="@id/g_end"
+            app:layout_constraintStart_toStartOf="@id/g_start"
+            app:layout_constraintTop_toBottomOf="@id/tv_headline"
+            tools:text="Description" />
+
+        <!--    This will have date and author-->
+        <TextView
+            android:id="@+id/tv_date"
+            style="@style/TvDate"
+            android:layout_marginTop="@dimen/tv_date_article_large_margin_top"
+            android:layout_marginBottom="@dimen/tv_date_article_large_margin_bottom"
+            app:layout_constraintEnd_toStartOf="@id/iv_share"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="@id/tv_content"
+            app:layout_constraintTop_toBottomOf="@id/tv_content"
+            app:layout_goneMarginBottom="@dimen/tv_date_article_large_gone_margin_bottom"
+            tools:text="Author - 3 hours ago" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/b_source"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="start"
+            android:singleLine="true"
+            app:layout_constraintStart_toStartOf="@id/tv_date"
+            app:layout_constraintTop_toBottomOf="@id/tv_date"
+            app:rippleColor="@color/purple_100"
+            tools:text="Go to Source.com" />
+
+        <ImageView
+            android:id="@+id/iv_share"
+            style="@style/BorderlessImageButton"
+            android:contentDescription="@string/content_image_description"
+            android:src="@drawable/ic_share"
+            app:layout_constraintBottom_toBottomOf="@id/tv_date"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_date" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

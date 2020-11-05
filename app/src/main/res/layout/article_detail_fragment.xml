@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/appBackgroundColor"
+    tools:context="com.ravirawal.statement.article_detail.ui.ArticleFragment">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_start"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="@dimen/constraint_guide_begin" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_end"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="@dimen/constraint_guide_end" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_bottom"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="@dimen/constraint_guide_bottom" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/iv_content_image"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/content_image_description"
+        android:minHeight="@dimen/iv_content_image_min_height"
+        android:scaleType="centerCrop"
+        app:layout_constraintDimensionRatio="16:9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSizeBottom8Percent"
+        tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+    <View
+        android:id="@+id/v_transparent"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/v_transparent_height"
+        android:background="@drawable/transparent_background"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_content_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_headline"
+        style="@style/TvHeadline"
+        android:layout_marginBottom="@dimen/tv_headline_detail_margin_bottom"
+        app:layout_constraintBottom_toBottomOf="@id/iv_content_image"
+        app:layout_constraintEnd_toEndOf="@id/g_end"
+        app:layout_constraintStart_toStartOf="@id/g_start"
+        app:layout_constraintTop_toTopOf="@+id/v_transparent"
+        app:layout_constraintVertical_bias="1.0"
+        tools:text="Title" />
+
+    <!--    This will have date and author-->
+    <TextView
+        android:id="@+id/tv_date"
+        style="@style/TvDate"
+        android:layout_marginTop="@dimen/tv_date_detail_margin_top"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="@id/g_end"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/g_start"
+        app:layout_constraintTop_toBottomOf="@+id/iv_content_image"
+        tools:text="Description" />
+
+    <TextView
+        android:id="@+id/tv_content"
+        style="@style/TvContent"
+        android:layout_marginTop="@dimen/tv_content_detail_margin_top"
+        app:layout_constraintBottom_toTopOf="@id/b_source"
+        app:layout_constraintEnd_toEndOf="@id/g_end"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/g_start"
+        app:layout_constraintTop_toBottomOf="@id/tv_date"
+        app:layout_constraintVertical_bias="0.0"
+        tools:text="Content" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/b_source"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/read_more"
+        app:layout_constraintBottom_toBottomOf="@id/g_bottom"
+        app:layout_constraintEnd_toEndOf="@id/g_end"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@id/g_start" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group_content_article"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:constraint_referenced_ids="iv_content_image,v_transparent, tv_headline, tv_date,tv_content, b_source" />
+
+
+    <include layout="@layout/loading_layout" />
+
+    <include layout="@layout/empty_layout" />
+
+    <include layout="@layout/no_internet_layout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_top_headlines"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/toolbar_height"
+        android:background="?attr/iconTintColor"
+        android:gravity="bottom"
+        android:paddingBottom="@dimen/toolbar_padding_bottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="@string/top_headlines"
+        app:titleTextColor="?attr/headingColor" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_top_headlines"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_top_headlines"
+        tools:listitem="@layout/article_large_row" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group_content_headlines"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:constraint_referenced_ids="rv_top_headlines, toolbar_top_headlines,fab_sorting" />
+
+
+    <include layout="@layout/loading_layout" />
+
+    <include layout="@layout/empty_layout" />
+
+    <include layout="@layout/no_internet_layout" />
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/fab_sorting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:backgroundTint="?attr/iconTintColor"
+        android:contentDescription="@string/content_image_description"
+        android:text="@string/sort"
+        android:textColor="@color/white"
+        app:icon="@drawable/ic_sort"
+        app:iconTint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/fab_descending"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="?attr/iconTintColor"
+        android:contentDescription="@string/content_image_description"
+        android:text="@string/descending"
+        android:textColor="@color/white"
+        app:icon="@drawable/ic_arrow_downward"
+        app:iconTint="@color/white"
+        app:layout_constraintBottom_toTopOf="@id/fab_sorting"
+        app:layout_constraintEnd_toEndOf="@id/fab_sorting" />
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/fab_ascending"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="?attr/iconTintColor"
+        android:contentDescription="@string/content_image_description"
+        android:text="@string/ascending"
+        android:textColor="@color/white"
+        app:icon="@drawable/ic_arrow_upward"
+        app:iconTint="@color/white"
+        app:layout_constraintBottom_toTopOf="@id/fab_descending"
+        app:layout_constraintEnd_toEndOf="@id/fab_descending"
+        app:layout_constraintStart_toStartOf="@id/fab_descending" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group_sorting"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:constraint_referenced_ids="fab_ascending, fab_descending" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
