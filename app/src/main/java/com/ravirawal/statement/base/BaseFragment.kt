@@ -79,7 +79,9 @@ open class BaseFragment<VM : BaseViewModel, VB : ViewBinding> : Fragment() {
     ) {
         when (outPut) {
             is Output.LOAD -> {
-                showLoader()
+                if (onLoad == null) {
+                    showLoader()
+                }
                 onLoad?.invoke()
             }
             is Output.Success -> {

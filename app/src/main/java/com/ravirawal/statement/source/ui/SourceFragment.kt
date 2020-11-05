@@ -9,6 +9,8 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ravirawal.statement.R
 import com.ravirawal.statement.base.BaseFragment
+import com.ravirawal.statement.databinding.LoadingShimmerFullPageLayoutBinding
+import com.ravirawal.statement.databinding.LoadingShimmerSourcesLayoutBinding
 import com.ravirawal.statement.databinding.SourcesFragmentBinding
 import com.ravirawal.statement.model.SourcesItem
 import com.ravirawal.statement.source.adapter.SourceAdapter
@@ -20,6 +22,13 @@ import com.ravirawal.statement.util.isOnline
 class SourceFragment : BaseFragment<SourcesViewModel, SourcesFragmentBinding>() {
 
     private val sourcesViewModel by viewModels<SourcesViewModel> { viewModelFactory }
+
+    private val loading by lazy {
+        LoadingShimmerSourcesLayoutBinding.inflate(
+            LayoutInflater.from(viewBinding.root.context),
+            viewBinding.root
+        )
+    }
 
     private val sourceAdapter =
         SourceAdapter { v: View, _: Int, i: SourcesItem? -> onRecyclerItemClicked(v, i) }
@@ -65,13 +74,31 @@ class SourceFragment : BaseFragment<SourcesViewModel, SourcesFragmentBinding>() 
         sourcesViewModel.fetchSources(context?.isOnline() ?: false)
             .observe(viewLifecycleOwner) { output ->
                 onOutput(output, onSuccess = {
+                    stopLoading()
                     viewBinding.groupContentSources.visibility = View.VISIBLE
                     sourceAdapter.submitList(it)
-                },onFailure = {
+                }, onFailure = {
+                    stopLoading()
                     viewBinding.groupContentSources.visibility = View.GONE
+                }, onLoad = {
+                    startLoading()
                 })
             }
+    }
 
+
+    private fun startLoading() {
+        with(loading.shimmerSources) {
+            startShimmer()
+            visibility = View.VISIBLE
+        }
+    }
+
+    private fun stopLoading() {
+        with(loading.shimmerSources) {
+            visibility = View.GONE
+            stopShimmer()
+        }
     }
 
     private fun setUpRecyclerView() {

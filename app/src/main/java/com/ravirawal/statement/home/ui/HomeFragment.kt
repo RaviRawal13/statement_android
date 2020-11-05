@@ -7,17 +7,19 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.edit
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.ravirawal.statement.R
 import com.ravirawal.statement.base.BaseFragment
 import com.ravirawal.statement.databinding.HomeFragmentBinding
+import com.ravirawal.statement.databinding.LoadingShimmerFullPageLayoutBinding
 import com.ravirawal.statement.home.adapter.ExploreAdapter
 import com.ravirawal.statement.home.vm.HomeViewModel
 import com.ravirawal.statement.model.Article
-import com.ravirawal.statement.model.NewsResponse
 import com.ravirawal.statement.network.Output
 import com.ravirawal.statement.util.*
+import kotlinx.coroutines.delay
 import javax.inject.Inject
 
 class HomeFragment : BaseFragment<HomeViewModel, HomeFragmentBinding>() {
@@ -33,6 +35,13 @@ class HomeFragment : BaseFragment<HomeViewModel, HomeFragmentBinding>() {
                 onRecyclerItemClicked(v, i)
             }
         }
+    }
+
+    private val loading by lazy {
+        LoadingShimmerFullPageLayoutBinding.inflate(
+            LayoutInflater.from(viewBinding.root.context),
+            viewBinding.root
+        )
     }
 
     private fun onRecyclerItemClicked(v: View, article: Article?) {
@@ -72,16 +81,35 @@ class HomeFragment : BaseFragment<HomeViewModel, HomeFragmentBinding>() {
         homeViewModel.fetchNews("india", context?.isOnline() ?: false)
             .observe(viewLifecycleOwner) { output: Output<List<Article>?> ->
                 onOutput(output, onSuccess = {
+                    stopLoading()
                     sharedPreferences.edit {
                         putBoolean(PREF_IS_DATA_LOADED, true)
                         putLong(PREF_LAST_HOME_SYNC, System.currentTimeMillis())
                     }
                     viewBinding.viewPagerHome.visibility = View.VISIBLE
                     exploreAdapter?.submitList(it)
+
                 }, onFailure = {
+                    stopLoading()
                     viewBinding.viewPagerHome.visibility = View.GONE
+                }, onLoad = {
+                    startLoading()
                 })
             }
+    }
+
+    fun startLoading() {
+        (loading?.shimmerArticleFullPage)?.let {
+            it.startShimmer()
+            it.visibility = View.VISIBLE
+        }
+    }
+
+    fun stopLoading() {
+        (loading?.shimmerArticleFullPage)?.let {
+            it.visibility = View.GONE
+            it.stopShimmer()
+        }
     }
 
     private fun setUpViewPager() {
