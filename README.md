@@ -86,6 +86,16 @@ Retrofit is used in the application to fetch data from the server.
 ## Testing
 The project contains unit test cases for WebService, DAO, Repository and ViewModel.
 
+## Build creating
+- Add the keys to the `local.properties` file as below:
+
+```
+    RELEASE_STORE_FILE={path to .jks}
+    RELEASE_STORE_PASSWORD="{store password}"
+    RELEASE_KEY_ALIAS="{key alias}"
+    RELEASE_KEY_PASSWORD="{key password}"
+```
+
 
 ## Download latest APK
 <a href="https://github.com/RaviRawal13/statement_android/blob/main/apk/com.ravirawal.statement-(1)-prod-release.apk?raw=true"><img  height="50px" width="50px" src="https://github.com/RaviRawal13/statement_android/blob/main/apk/download.png?raw=true" alt="Download"></a>
