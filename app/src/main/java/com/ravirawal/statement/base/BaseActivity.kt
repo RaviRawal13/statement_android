@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
+import com.ravirawal.statement.R
 import com.ravirawal.statement.util.setStatusBarTransparent
 import dagger.android.AndroidInjection
 import dagger.android.AndroidInjector
