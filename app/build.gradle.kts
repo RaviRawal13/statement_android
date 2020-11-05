@@ -35,8 +35,6 @@ android {
         setProperty("archivesBaseName", "${applicationId}-(${versionCode})")
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         buildConfigField("String", "API_KEY", key)
-//        buildConfigField 'String', 'API_DEVELOPER_TOKEN', "58d482512a2e430fa414efe8c8747fc2"
-
     }
 
     buildFeatures {
