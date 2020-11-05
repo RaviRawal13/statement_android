@@ -17,6 +17,8 @@ It has the following screens:
 <p float="left">
   <img alt="Statement Light" height="450px" src="https://github.com/RaviRawal13/statement_android/blob/main/screenshots/statement_light.gif?raw=true" />
   <img alt="Statement Dark" height="450px" src="https://github.com/RaviRawal13/statement_android/blob/main/screenshots/statement_dark.gif?raw=true" />
+  
+  <img alt="Statement Dark" height="450px" src="https://raw.githubusercontent.com/RaviRawal13/statement_android/main/screenshots/full_app_dark.gif" />
 </p>
 
 <p float="left">
