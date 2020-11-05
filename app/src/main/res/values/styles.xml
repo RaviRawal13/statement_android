@@ -1,62 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <style name="ShapeAppearanceOverlay.App.CornerSizeBottom8Percent" parent="">
-        <item name="cornerSizeBottomRight">8%</item>
-        <item name="cornerSizeBottomLeft">8%</item>
-    </style>
-
-    <style name="CardViewClickable" parent="Widget.MaterialComponents.CardView">
-        <item name="cardCornerRadius">3dp</item>
-        <item name="cardElevation">0dp</item>
-        <item name="android:foreground">?attr/selectableItemBackground</item>
-        <item name="android:layout_marginTop">4dp</item>
-        <item name="android:layout_marginBottom">4dp</item>
-        <item name="android:layout_marginEnd">8dp</item>
-        <item name="android:layout_marginStart">8dp</item>
-        <item name="android:clickable">true</item>
-        <item name="android:focusable">true</item>
-    </style>
-
-    <style name="BorderlessImageButton">
-        <item name="android:clickable">true</item>
-        <item name="android:focusable">true</item>
-        <item name="android:layout_height">36dp</item>
-        <item name="android:layout_width">36dp</item>
-        <item name="android:scaleType">centerInside</item>
-        <item name="android:background">?selectableItemBackgroundBorderless</item>
-    </style>
-
-    <style name="TvHeadline">
-        <item name="android:background">@android:color/transparent</item>
-        <item name="android:fontFamily">sans-serif-medium</item>
-        <item name="android:textColor">?attr/headingColor</item>
-        <item name="android:textSize">20sp</item>
-        <item name="android:layout_width">0dp</item>
-        <item name="android:layout_height">wrap_content</item>
-    </style>
-
-    <style name="TvContent">
-        <item name="android:background">@android:color/transparent</item>
-        <item name="android:fontFamily">sans-serif-light</item>
-        <item name="android:textColor">?attr/subHeadingColor</item>
-        <item name="android:textSize">18sp</item>
-        <item name="android:layout_width">0dp</item>
-        <item name="android:layout_height">wrap_content</item>
-    </style>
-
-    <style name="TvDate">
-        <item name="android:background">@android:color/transparent</item>
-        <item name="android:fontFamily">sans-serif-light</item>
-        <item name="android:textColor">?attr/subHeadingColor</item>
-        <item name="android:textSize">18sp</item>
-        <item name="android:layout_width">0dp</item>
-        <item name="android:layout_height">wrap_content</item>
-    </style>
-
-    <style name="ActivityAnimations" parent="@android:style/Animation.Activity">
-        <item name="android:windowEnterTransition">@android:anim/fade_in</item>
-        <item name="android:windowExitTransition">@android:anim/fade_out</item>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
     </style>
 
 </resources>
