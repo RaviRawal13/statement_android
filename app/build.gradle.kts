@@ -10,6 +10,13 @@ plugins {
 
 val key = gradleLocalProperties(rootDir).getProperty("apiKey", "")
 
+val releaseKeyAlias: String = gradleLocalProperties(rootDir).getProperty("RELEASE_KEY_ALIAS", "")
+val releaseKeyPassword: String =
+    gradleLocalProperties(rootDir).getProperty("RELEASE_KEY_PASSWORD", "")
+val releaseStorePassword: String =
+    gradleLocalProperties(rootDir).getProperty("RELEASE_STORE_PASSWORD", "")
+val releaseStoreFilePath: String =
+    gradleLocalProperties(rootDir).getProperty("RELEASE_STORE_FILE", "")
 val androidBuildMinSdkVersion: String by project
 val androidBuildSdkTarget: String by project
 val androidCompileSdkVersion: String by project
@@ -37,14 +44,28 @@ android {
         buildConfigField("String", "API_KEY", key)
     }
 
+    signingConfigs {
+        create("release") {
+            storeFile(file(releaseStoreFilePath))
+            storePassword(releaseStorePassword)
+
+            keyAlias(releaseKeyAlias)
+            keyPassword(releaseKeyPassword)
+
+            isV1SigningEnabled = true
+            isV2SigningEnabled = true
+        }
+    }
+
     buildFeatures {
         viewBinding = true
     }
 
     buildTypes {
         getByName("release") {
-            isMinifyEnabled = true
-            isShrinkResources = true
+            signingConfig = signingConfigs.getByName("release")
+            isMinifyEnabled = false
+            isShrinkResources = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -115,7 +136,7 @@ dependencies {
 
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
-    implementation("com.squareup.okhttp3:logging-interceptor:4.8.1")
+    implementation("com.squareup.okhttp3:logging-interceptor:4.9.0")
     implementation("com.google.code.gson:gson:2.8.6")
 
     implementation("com.google.android.material:material:1.2.1")
@@ -138,11 +159,11 @@ dependencies {
 
     implementation("androidx.paging:paging-runtime:2.1.2")
 
-    implementation("com.google.dagger:dagger:2.28")
-    implementation("com.google.dagger:dagger-android:2.28")
-    implementation("com.google.dagger:dagger-android-support:2.28")
-    kapt("com.google.dagger:dagger-compiler:2.28")
-    kapt("com.google.dagger:dagger-android-processor:2.28")
+    implementation("com.google.dagger:dagger:2.29.1")
+    implementation("com.google.dagger:dagger-android:2.29.1")
+    implementation("com.google.dagger:dagger-android-support:2.29.1")
+    kapt("com.google.dagger:dagger-compiler:2.29.1")
+    kapt("com.google.dagger:dagger-android-processor:2.29.1")
 
     testImplementation("junit:junit:4.13.1")
 
@@ -152,7 +173,7 @@ dependencies {
     testImplementation("org.mockito:mockito-core:3.3.3")
     androidTestImplementation("org.mockito:mockito-android:2.25.0")
 
-    testImplementation("com.squareup.okhttp3:mockwebserver:4.8.1")
+    testImplementation("com.squareup.okhttp3:mockwebserver:4.9.0")
 
     testImplementation("androidx.arch.core:core-testing:2.1.0")
 
