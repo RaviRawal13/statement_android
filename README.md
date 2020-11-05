@@ -15,7 +15,7 @@ It has the following screens:
 
 - **Article detail page**: This is the detail page of a news article.
 
-<img alt="App screens" height="450px" src="" />
+<img alt="App screens" height="450px" src="https://github.com/RaviRawal13/statement_android/blob/main/screenshots/statement_light.gif?raw=true" />
 
 ## Development Setup
 
