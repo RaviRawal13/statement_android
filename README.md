@@ -14,10 +14,13 @@ It has the following screens:
 - **Headlines by source**: When we choose a news source from the `Sources` screen, for example `ABC News`; we are navigated to the `Headlines by source` screen which lists all the news articles published by `ABC News`.
 
 - **Article detail page**: This is the detail page of a news article.
+<p float="left">
+  <img alt="Statement Light" height="450px" src="https://github.com/RaviRawal13/statement_android/blob/main/screenshots/statement_light.gif?raw=true" />
+  <img alt="Statement Dark" height="450px" src="https://github.com/RaviRawal13/statement_android/blob/main/screenshots/statement_dark.gif?raw=true" />
+</p>
 
-<img alt="Statement Light" height="450px" src="https://github.com/RaviRawal13/statement_android/blob/main/screenshots/statement_light.gif?raw=true" />
 
-<img alt="Statement Dark" height="450px" src="https://github.com/RaviRawal13/statement_android/blob/main/screenshots/statement_dark.gif?raw=true" />
+
 
 ## Development Setup
 
