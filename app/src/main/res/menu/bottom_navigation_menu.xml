@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/explore_nav_graph"
+        android:checked="true"
+        android:icon="@drawable/ic_globe"
+        android:title="@string/explore" />
+
+    <item
+        android:id="@+id/news_stand_nav_graph"
+        android:icon="@drawable/ic_newspaper"
+        android:title="@string/news_stand" />
+
+</menu>
