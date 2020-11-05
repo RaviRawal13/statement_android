@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cv_source"
+    style="@style/CardViewClickable"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_sources_parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border_shape"
+        android:orientation="vertical"
+        android:padding="@dimen/cl_sources_padding">
+
+        <TextView
+            android:id="@+id/tv_headline"
+            style="@style/TvHeadline"
+            android:layout_marginTop="@dimen/tv_headline_sources_margin_top"
+            android:padding="@dimen/tv_headline_sources_padding"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Source Name" />
+
+        <TextView
+            android:id="@+id/tv_content"
+            style="@style/TvContent"
+            android:padding="@dimen/tv_content_sources_padding"
+            android:textSize="@dimen/text_size_12"
+            app:layout_constraintEnd_toEndOf="@id/tv_headline"
+            app:layout_constraintStart_toStartOf="@id/tv_headline"
+            app:layout_constraintTop_toBottomOf="@id/tv_headline"
+            tools:text="Source Description" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/b_source"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/b_source_margin_top"
+            app:layout_constraintStart_toStartOf="@+id/tv_content"
+            app:layout_constraintTop_toBottomOf="@+id/tv_content"
+            app:rippleColor="@color/purple_100"
+            tools:text="Go to Source.com" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

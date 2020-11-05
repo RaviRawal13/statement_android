@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/news_stand_nav_graph"
+    app:startDestination="@id/sourceFragment">
+    <fragment
+        android:id="@+id/sourceFragment"
+        android:name="com.ravirawal.statement.source.ui.SourceFragment"
+        android:label="Source">
+        <action
+            android:id="@+id/action_sourceFragment_to_topHeadlinesFragment"
+            app:destination="@id/topHeadlinesFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:launchSingleTop="false"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_sourceFragment_to_webViewFragment"
+            app:destination="@id/webViewFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:launchSingleTop="false"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/topHeadlinesFragment"
+        android:name="com.ravirawal.statement.headlines.ui.TopHeadlinesFragment"
+        android:label="TopHeadlines">
+        <action
+            android:id="@+id/action_topHeadlinesFragment_to_webViewFragment"
+            app:destination="@id/webViewFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_topHeadlinesFragment_to_articleFragment"
+            app:destination="@id/articleFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/webViewFragment"
+        android:name="com.ravirawal.statement.webview.WebViewFragment"
+        android:label="WebView" />
+
+    <fragment
+        android:id="@+id/articleFragment"
+        android:name="com.ravirawal.statement.article_detail.ui.ArticleFragment"
+        android:label="Article"
+        tools:layout="@layout/article_detail_fragment">
+        <action
+            android:id="@+id/action_articleFragment_to_webViewFragment"
+            app:destination="@id/webViewFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <argument
+            android:name="top_headline"
+            app:argType="com.ravirawal.statement.model.TopHeadlines"
+            app:nullable="true" />
+    </fragment>
+</navigation>
