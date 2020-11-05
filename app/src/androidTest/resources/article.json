@@ -1,0 +1,32 @@
+{
+  "status": "ok",
+  "totalResults": 88794,
+  "articles": [
+    {
+      "source": {
+        "id": null,
+        "name": "Lifehacker.com"
+      },
+      "author": "Brendan Hesse",
+      "title": "How to Watch Apple TV's New MTV-Style Music Channel",
+      "description": "Apple just launched Apple Music TV, a new Apple TV channel that plays round-the-clock music videos, live concerts, and other exclusive music-based content. It’s a free add-on for anyone with the Apple Music or Apple TV apps, though it’s exclusive to the US fo…",
+      "url": "https://lifehacker.com/how-to-watch-apple-tvs-new-mtv-style-music-channel-1845429371",
+      "urlToImage": "https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_675,pg_1,q_80,w_1200/djgs372gk8q9fskkytqq.png",
+      "publishedAt": "2020-10-21T14:30:00Z",
+      "content": "Apple just launched Apple Music TV, a new Apple TV channel that plays round-the-clock music videos, live concerts, and other exclusive music-based content. Its a free add-on for anyone with the Apple… [+1970 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Lifehacker.com"
+      },
+      "author": "Brendan Hesse",
+      "title": "How to Watch Today's Apple iPhone 12 Event",
+      "description": "Fall is historically “Apple announcement season,” but like everything else in 2020, things are a little different this year. Instead of dropping all of its news in a single, rapid-fire event, Apple is doling out its announcements piecemeal. Last month’s live-…",
+      "url": "https://lifehacker.com/how-to-watch-todays-apple-iphone-12-event-1845350276",
+      "urlToImage": "https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_675,pg_1,q_80,w_1200/wcxptreqifu6ul9zsnll.png",
+      "publishedAt": "2020-10-13T13:00:00Z",
+      "content": "Fall is historically Apple announcement season, but like everything else in 2020, things are a little different this year. Instead of dropping all of its news in a single, rapid-fire event, Apple is … [+1486 chars]"
+    }
+  ]
+}
