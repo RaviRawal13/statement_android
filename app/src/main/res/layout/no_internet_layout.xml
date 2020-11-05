@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout">
+
+
+    <ImageView
+        android:id="@+id/iv_no_network"
+        android:layout_width="@dimen/iv_no_network_width"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/content_image_description"
+        android:src="@drawable/ic_no_wifi"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/ic_no_wifi" />
+
+    <TextView
+        android:id="@+id/tv_headline_no_network"
+        style="@style/TvHeadline"
+        android:layout_margin="@dimen/tv_headline_no_internet_margin"
+        android:gravity="center_horizontal"
+        android:text="@string/uh_oh_internet_not_available"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_no_network"
+        tools:text="Uh oh! Internet not available." />
+
+    <TextView
+        android:id="@+id/tv_content_no_network"
+        style="@style/TvContent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/retry_soon"
+        android:layout_marginTop="@dimen/tv_content_no_network_margin_top"
+        app:layout_constraintEnd_toEndOf="@+id/tv_headline_no_network"
+        app:layout_constraintStart_toStartOf="@+id/tv_headline_no_network"
+        app:layout_constraintTop_toBottomOf="@+id/tv_headline_no_network"
+        tools:text="Retry soon" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group_no_internet"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:constraint_referenced_ids="iv_no_network, tv_content_no_network, tv_headline_no_network" />
+
+</merge>
