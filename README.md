@@ -84,5 +84,9 @@ loading -> saved data from DB -> new network data | error
 Retrofit is used in the application to fetch data from the server.
 
 ## Testing
-
+<img alt="Statement Dark Home" height="350px" src="https://github.com/RaviRawal13/statement_android/blob/main/screenshots/dark_home.png?raw=true" />
 The project contains unit test cases for WebService, DAO, Repository and ViewModel.
+
+
+## Download latest APK:
+<a href="https://github.com/RaviRawal13/statement_android/blob/main/apk/com.ravirawal.statement-(1)-prod-release.apk?raw=true"><img  height="50px" width="50px" src="https://github.com/RaviRawal13/statement_android/blob/main/apk/download.png?raw=true" alt="Download"></a>
