@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?attr/appBackgroundColor"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_start"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/constraint_guide_begin" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_end"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/constraint_guide_end" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_bottom"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_end="@dimen/constraint_guide_bottom" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_content_image"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:contentDescription="@string/content_image_description"
+            android:scaleType="fitXY"
+            app:layout_constraintDimensionRatio="16:9"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSizeBottom8Percent"
+            tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+        <TextView
+            android:id="@+id/tv_headline"
+            style="@style/TvHeadline"
+            android:layout_marginTop="@dimen/tv_headline_full_page_margin_top"
+            android:paddingBottom="@dimen/tv_headline_full_page_padding_bottom"
+            app:layout_constraintEnd_toEndOf="@id/g_end"
+            app:layout_constraintStart_toStartOf="@id/g_start"
+            app:layout_constraintTop_toBottomOf="@id/iv_content_image"
+            tools:text="Title" />
+
+        <TextView
+            android:id="@+id/tv_content"
+            style="@style/TvContent"
+            android:paddingBottom="@dimen/tv_content_full_page_padding_bottom"
+            app:layout_constraintEnd_toEndOf="@id/g_end"
+            app:layout_constraintStart_toStartOf="@id/g_start"
+            app:layout_constraintTop_toBottomOf="@id/tv_headline"
+            tools:text="Description" />
+
+        <TextView
+            android:id="@+id/tv_author"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:maxEms="@integer/twenty"
+            android:maxLines="@integer/one"
+            android:textColor="?attr/subHeadingColor"
+            android:textSize="@dimen/text_size_20"
+            android:typeface="serif"
+            app:layout_constraintEnd_toEndOf="@id/g_end"
+            app:layout_constraintStart_toStartOf="@id/g_start"
+            app:layout_constraintTop_toBottomOf="@id/tv_content"
+            tools:text="Author" />
+
+        <TextView
+            android:id="@+id/tv_date"
+            style="@style/TvDate"
+            android:paddingBottom="@dimen/tv_date_full_page_padding_bottom"
+            android:textSize="@dimen/text_size_15"
+            app:layout_constraintEnd_toEndOf="@id/g_end"
+            app:layout_constraintStart_toStartOf="@id/g_start"
+            app:layout_constraintTop_toBottomOf="@id/tv_author"
+            tools:text="01 NOV 2020" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/b_source"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/b_source_full_page_margin_top"
+            android:layout_marginEnd="@dimen/b_source_full_page_margin_end"
+            app:layout_constraintEnd_toEndOf="@id/iv_share"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="@id/g_start"
+            app:layout_constraintTop_toBottomOf="@id/tv_date"
+            app:rippleColor="@color/purple_100"
+            tools:text="Go to Source.com" />
+
+        <ImageView
+            android:id="@+id/iv_share"
+            style="@style/BorderlessImageButton"
+            android:contentDescription="@string/content_image_description"
+            android:src="@drawable/ic_share"
+            app:layout_constraintBottom_toBottomOf="@id/b_source"
+            app:layout_constraintEnd_toEndOf="@id/g_end"
+            app:layout_constraintTop_toTopOf="@id/b_source" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+
+
