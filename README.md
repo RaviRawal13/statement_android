@@ -15,7 +15,9 @@ It has the following screens:
 
 - **Article detail page**: This is the detail page of a news article.
 
-<img alt="App screens" height="450px" src="https://github.com/RaviRawal13/statement_android/blob/main/screenshots/statement_light.gif?raw=true" />
+<img alt="Statement Light" height="450px" src="https://github.com/RaviRawal13/statement_android/blob/main/screenshots/statement_light.gif?raw=true" />
+
+<img alt="Statement Dark" height="450px" src="https://github.com/RaviRawal13/statement_android/blob/main/screenshots/statement_dark.gif?raw=true" />
 
 ## Development Setup
 
@@ -34,6 +36,8 @@ Head over to [NewsAPI](https://newsapi.org/register) to generate your API key. T
 ## Application Architecture
 
 The app uses MVVM [Model-View-ViewModel] architecture to have a unidirectional flow of data, separation of concern, testability, and a lot more.
+
+<img alt="Flow" height="450px" src="https://github.com/RaviRawal13/statement_android/blob/main/screenshots/base_arch.png?raw=true" />
 
 ### Dependency Injection
 
