@@ -41,6 +41,9 @@ It has the following screens:
   
 </p>
 
+## Checkout the full demo app video:
+https://github.com/RaviRawal13/statement_android/blob/main/screenshots/statement_android_vid.mp4?raw=true
+
 
 ## Development Setup
 
