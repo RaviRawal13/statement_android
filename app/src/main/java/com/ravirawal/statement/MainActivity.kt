@@ -1,13 +1,9 @@
 package com.ravirawal.statement
 
-import android.graphics.Color
 import android.os.Bundle
-import android.view.WindowManager
-import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.lifecycle.LiveData
 import androidx.navigation.NavController
-import androidx.navigation.ui.setupActionBarWithNavController
 import com.ravirawal.statement.base.BaseActivity
 import com.ravirawal.statement.databinding.MainActivityBinding
 import com.ravirawal.statement.util.setupWithNavController
