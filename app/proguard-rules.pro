@@ -19,3 +19,20 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+-keep class com.ravirawal.statement.model.** {*;}
+
+-keep class retrofit2.**{*;}
+-keep class retrofit.**{*;}
+
+-dontwarn okhttp3.**
+-dontwarn okio.**
+
+-keep class com.squareup.okhttp.** { *; }
+-keep interface com.squareup.okhttp.** { *; }
+-dontwarn com.squareup.okhttp.**
+
+
+
+
+
+
