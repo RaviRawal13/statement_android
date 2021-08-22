@@ -35,7 +35,9 @@
         android:layout_height="0dp"
         app:constraint_referenced_ids="rv_sources, toolbar_sources"/>
 
-    <include layout="@layout/loading_layout" />
+    <include
+        layout="@layout/loading_shimmer_full_page_layout" />
+<!--    <include layout="@layout/loading_layout" />-->
 
     <include layout="@layout/empty_layout" />
 

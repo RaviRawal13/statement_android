@@ -17,6 +17,8 @@ It has the following screens:
 <p float="left">
   <img alt="Statement Light" height="450px" src="https://github.com/RaviRawal13/statement_android/blob/main/screenshots/statement_light.gif?raw=true" />
   <img alt="Statement Dark" height="450px" src="https://github.com/RaviRawal13/statement_android/blob/main/screenshots/statement_dark.gif?raw=true" />
+  
+  <img alt="Statement Dark" height="450px" src="https://raw.githubusercontent.com/RaviRawal13/statement_android/main/screenshots/full_app_dark.gif" />
 </p>
 
 <p float="left">
@@ -40,6 +42,9 @@ It has the following screens:
   
   
 </p>
+
+## Checkout the full demo app video:
+https://github.com/RaviRawal13/statement_android/blob/main/screenshots/statement_android_vid.mp4?raw=true
 
 
 ## Development Setup
@@ -85,6 +90,16 @@ Retrofit is used in the application to fetch data from the server.
 
 ## Testing
 The project contains unit test cases for WebService, DAO, Repository and ViewModel.
+
+## Build creating
+- Add the keys to the `local.properties` file as below:
+
+```
+    RELEASE_STORE_FILE={path to .jks}
+    RELEASE_STORE_PASSWORD="{store password}"
+    RELEASE_KEY_ALIAS="{key alias}"
+    RELEASE_KEY_PASSWORD="{key password}"
+```
 
 
 ## Download latest APK

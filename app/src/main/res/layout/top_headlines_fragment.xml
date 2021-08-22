@@ -36,7 +36,7 @@
         app:constraint_referenced_ids="rv_top_headlines, toolbar_top_headlines,fab_sorting" />
 
 
-    <include layout="@layout/loading_layout" />
+<!--    <include layout="@layout/loading_layout" />-->
 
     <include layout="@layout/empty_layout" />
 
@@ -91,5 +91,8 @@
         android:layout_height="0dp"
         android:visibility="gone"
         app:constraint_referenced_ids="fab_ascending, fab_descending" />
+
+    <include
+        layout="@layout/loading_shimmer_headlines_layout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

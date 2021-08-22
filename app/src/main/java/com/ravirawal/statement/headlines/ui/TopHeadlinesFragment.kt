@@ -9,17 +9,22 @@ import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ravirawal.statement.R
 import com.ravirawal.statement.base.BaseFragment
+import com.ravirawal.statement.databinding.LoadingShimmerHeadlinesLayoutBinding
+import com.ravirawal.statement.databinding.LoadingShimmerSourcesLayoutBinding
 import com.ravirawal.statement.databinding.TopHeadlinesFragmentBinding
 import com.ravirawal.statement.headlines.adapter.TopHeadlinesAdapter
 import com.ravirawal.statement.headlines.vm.TopHeadlinesViewModel
 import com.ravirawal.statement.model.TopHeadlines
 import com.ravirawal.statement.network.Output
 import com.ravirawal.statement.util.*
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 
 class TopHeadlinesFragment : BaseFragment<TopHeadlinesViewModel, TopHeadlinesFragmentBinding>() {
@@ -30,6 +35,13 @@ class TopHeadlinesFragment : BaseFragment<TopHeadlinesViewModel, TopHeadlinesFra
     private var fabOpen: Animation? = null
 
     private var fabClose: Animation? = null
+
+    private val loading by lazy {
+        LoadingShimmerHeadlinesLayoutBinding.inflate(
+            LayoutInflater.from(viewBinding.root.context),
+            viewBinding.root
+        )
+    }
 
     private val topHeadlinesAdapter =
         TopHeadlinesAdapter { v: View, ivContent: ImageView, tvHeadline: TextView, tvContent: TextView, tvDate: TextView, _: Int, i: TopHeadlines? ->
@@ -64,7 +76,7 @@ class TopHeadlinesFragment : BaseFragment<TopHeadlinesViewModel, TopHeadlinesFra
                     tvHeadline to tvHeadline.transitionName,
                     tvContent to tvContent.transitionName,
                     tvDate to tvDate.transitionName
-                    )
+                )
                 val dir =
                     TopHeadlinesFragmentDirections.actionTopHeadlinesFragmentToArticleFragment(
                         topHeadlines
@@ -137,15 +149,32 @@ class TopHeadlinesFragment : BaseFragment<TopHeadlinesViewModel, TopHeadlinesFra
         showSorting = false
     }
 
+    private fun startLoading() {
+        with(loading.shimmerSources) {
+            startShimmer()
+            visibility = View.VISIBLE
+        }
+    }
+
+    private fun stopLoading() {
+        viewLifecycleOwner.lifecycleScope.launch {
+            delay(400)
+            with(loading.shimmerSources) {
+                visibility = View.GONE
+                stopShimmer()
+            }
+        }
+    }
+
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        showLoader()
+        startLoading()
         val data = topHeadlinesViewModel.newsList(
             context?.isOnline() ?: false,
             source
         )
         data.observe(viewLifecycleOwner) {
-            hideLoader()
+            stopLoading()
             topHeadlinesAdapter.submitList(it)
         }
     }

@@ -44,18 +44,18 @@ android {
         buildConfigField("String", "API_KEY", key)
     }
 
-    signingConfigs {
-        create("release") {
-            storeFile(file(releaseStoreFilePath))
-            storePassword(releaseStorePassword)
-
-            keyAlias(releaseKeyAlias)
-            keyPassword(releaseKeyPassword)
-
-            isV1SigningEnabled = true
-            isV2SigningEnabled = true
-        }
-    }
+//    signingConfigs {
+//        create("release") {
+//            storeFile(file(releaseStoreFilePath))
+//            storePassword(releaseStorePassword)
+//
+//            keyAlias(releaseKeyAlias)
+//            keyPassword(releaseKeyPassword)
+//
+//            isV1SigningEnabled = true
+//            isV2SigningEnabled = true
+//        }
+//    }
 
     buildFeatures {
         viewBinding = true
@@ -63,7 +63,7 @@ android {
 
     buildTypes {
         getByName("release") {
-            signingConfig = signingConfigs.getByName("release")
+//            signingConfig = signingConfigs.getByName("release")
             isMinifyEnabled = false
             isShrinkResources = false
             proguardFiles(
@@ -164,6 +164,8 @@ dependencies {
     implementation("com.google.dagger:dagger-android-support:2.29.1")
     kapt("com.google.dagger:dagger-compiler:2.29.1")
     kapt("com.google.dagger:dagger-android-processor:2.29.1")
+
+    implementation("com.facebook.shimmer:shimmer:0.5.0")
 
     testImplementation("junit:junit:4.13.1")
 

@@ -14,7 +14,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <include
-        layout="@layout/loading_layout" />
+        layout="@layout/loading_shimmer_full_page_layout" />
 
     <include
         layout="@layout/empty_layout" />
